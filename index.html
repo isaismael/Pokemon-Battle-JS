@@ -29,36 +29,41 @@
         </div>
     </div>
 
-    <!-- Dialogo -->
-    <div>
-        <div class="dialogo text-center m-2">
-            <h2>Un Vensasaur salvaje ha aparecido y quiere pelear!</h2>
-        </div>
-    </div>
-    
+    <!-- prueba -->
 
-    <!-- Status -->
-    <div class="container text-center mt-2">
-        <div class="row align-items-start">
-            <!-- Player -->
-            <div class="col">
-
-                <h3>Charizard</h3>
-                <div class="progress">
-                    <div id="hpBarra" class="barra progress-bar" role="progressbar" style="width: 100%"
-                        aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+    <div class="container">
+        <div class="row">
+            <div class="col p-1">
+                <div>
+                    <div class="dialogo text-center m-1">
+                        <h3>Vensasaur salvaje ha aparecido y quiere pelear!</h3>
                     </div>
                 </div>
-                <h4 id="hpPlayer">HP: 100</h4>
+
             </div>
-            <!-- Rival -->
+
             <div class="col">
-                <h3>Venasaur</h3>
-                <div class="progress">
-                    <div id="barraRival" class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100"
-                        aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="row align-items-start">
+                    <!-- Player -->
+                    <div class="col m-2">
+                        <h3>Charizard</h3>
+                        <div class="progress">
+                            <div id="hpBarra" class="barra progress-bar" role="progressbar" style="width: 100%"
+                                aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                        <h4 id="hpPlayer">HP: 100</h4>
+                    </div>
+                    <!-- Rival -->
+                    <div class="col m-2">
+                        <h3>Venasaur</h3>
+                        <div class="progress">
+                            <div id="barraRival" class="progress-bar" role="progressbar" style="width: 100%"
+                                aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <h4 id="hpRival">HP: 100</h4>
+                    </div>
                 </div>
-                <h4 id="hpRival">HP: 100</h4>
             </div>
         </div>
 
@@ -70,9 +75,6 @@
             <button id="btnArañazo" class="btn-danger m-1 p-1">Arañazo</button>
         </div>
 
-        <!-- <audio autoplay >
-        <source src="/assets/audio/battle.ogg"> 
-    </audio> -->
 
         <script src="/js/juego.js"></script>
 </body>
