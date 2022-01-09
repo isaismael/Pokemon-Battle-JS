@@ -10,6 +10,7 @@
 </head>
 <body>
     <header class="titulo">Pokemon Battle JS</header>
+    
     <!-- Scenery -->
     <div class="scenery text-center" >
         <img class="sceneryBattle img-fluid" src="/assets/bg/background.png" alt="" srcset="">
@@ -33,14 +34,14 @@
             <h3>Charizard</h3>
             <h3>HP:</h3>
             <h4 id="hpPlayer">100</h4>
-            <h4 id="estadoPlayer" >Estado: </h4>
+            <h4 id="estadoPlayer">Ataque: </h4>
           </div>
           <!-- Rival -->
           <div class="col">
             <h3>Venasaur</h3>
             <h3>HP:</h3>
             <h4 id="hpRival">100</h4>
-            <h4 id="estadoRival" >Estado: </h4>
+            <h4 id="estadoRival">Ataque:</h4>
           </div>
         </div>
 
@@ -51,6 +52,10 @@
         <button id="btnAscuas" class="btn-danger m-1">Ascuas</button>
         <button id="btnArañazo" class="btn-danger m-1">Arañazo</button>
     </div>
+
+    <audio autoplay >
+        <source src="/assets/audio/battle.ogg"> 
+    </audio>
 
     <script src="/js/juego.js"></script>
 </body>

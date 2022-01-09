@@ -10,7 +10,7 @@ let furia = 6,
 
 //Ataques Venasaur
 let cabezaso = 0,
-    envenenar = 1,
+    latigoCepa = 1,
     hojasNavajas = 2,
     fallar = 3;
 
@@ -26,6 +26,8 @@ const estadoPlayer = document.querySelector('#estadoPlayer');
 
 const hpRival = document.querySelector('#hpRival');
 const estadoRival = document.querySelector('#estadoRival');
+
+
 
 // Ataques Player
 const ataqueFuria = () =>{
@@ -52,24 +54,34 @@ const ataqueRival = () => {
     if (rival === cabezaso){
         vidaCharizard = vidaCharizard - 6;
         hpPlayer.innerHTML = vidaCharizard;
-        console.log(rival);
+        estadoRival.innerHTML = 'Ataque: Cabezaso';
     } else if (rival === hojasNavajas){
         vidaCharizard = vidaCharizard - 12;
         hpPlayer.innerHTML = vidaCharizard;
-        console.log(rival);
-    }
+        estadoRival.innerHTML = 'Ataque: Hojas Navajas';
+    } else if (rival === latigoCepa) {
+        vidaCharizard = vidaCharizard - 14;
+        hpPlayer.innerHTML = vidaCharizard;
+        estadoRival.innerHTML = 'Ataque: Latigo Cepa';
+    } else if (rival === fallar) {
+        vidaCharizard = vidaCharizard - 0;
+        hpPlayer.innerHTML = vidaCharizard;
+        estadoRival.innerHTML = 'Ataque: Fallo!';
+    } 
 }
 
 
 //BTN Ataques
 btnFuria.addEventListener( 'click', () => {
     ataqueFuria();
+    estadoPlayer.innerHTML = 'Ataque: Furia';
     hpRival.innerHTML = vidaVenasaur;
+    btnFuria.disabled = true;
+    btnLanzallamas.disabled = true;
+    btnAscuas.disabled = true;
+    btnArañazo.disabled = true;
     setTimeout(() => {
-        btnFuria.disabled = true;
-        btnLanzallamas.disabled = true;
-        btnAscuas.disabled = true;
-        btnArañazo.disabled = true;
+        
         ataqueRival();
     }, 1000);
     // Habilitar btn
@@ -83,12 +95,13 @@ btnFuria.addEventListener( 'click', () => {
 
 btnLanzallamas.addEventListener( 'click', ()=> {
     ataqueLanzallamas();
+    estadoPlayer.innerHTML = 'Ataque: Lanzallamas';
     hpRival.innerHTML = vidaVenasaur;
+    btnFuria.disabled = true;
+    btnLanzallamas.disabled = true;
+    btnAscuas.disabled = true;
+    btnArañazo.disabled = true;
     setTimeout(() => {
-        btnFuria.disabled = true;
-        btnLanzallamas.disabled = true;
-        btnAscuas.disabled = true;
-        btnArañazo.disabled = true;
         ataqueRival();
     }, 1000);
     // Habilitar btn
@@ -102,12 +115,13 @@ btnLanzallamas.addEventListener( 'click', ()=> {
 
 btnAscuas.addEventListener('click', () => {
     ataqueAscuas();
+    estadoPlayer.innerHTML = 'Ataque: Ascuas';
     hpRival.innerHTML = vidaVenasaur;
+    btnFuria.disabled = true;
+    btnLanzallamas.disabled = true;
+    btnAscuas.disabled = true;
+    btnArañazo.disabled = true;
     setTimeout(() => {
-        btnFuria.disabled = true;
-        btnLanzallamas.disabled = true;
-        btnAscuas.disabled = true;
-        btnArañazo.disabled = true;
         ataqueRival();
     }, 1000);
     // Habilitar btn
@@ -121,12 +135,13 @@ btnAscuas.addEventListener('click', () => {
 
 btnArañazo.addEventListener('click', () => {
     ataqueArañazo();
+    estadoPlayer.innerHTML = 'Ataque: Arañazo';
     hpRival.innerHTML = vidaVenasaur;
+    btnFuria.disabled = true;
+    btnLanzallamas.disabled = true;
+    btnAscuas.disabled = true;
+    btnArañazo.disabled = true;
     setTimeout(() => {
-        btnFuria.disabled = true;
-        btnLanzallamas.disabled = true;
-        btnAscuas.disabled = true;
-        btnArañazo.disabled = true;
         ataqueRival();
     }, 1000);
     // Habilitar btn
@@ -138,4 +153,4 @@ btnArañazo.addEventListener('click', () => {
     }, 4000);
 })
 
-console.log(vidaVenasaur);
+
