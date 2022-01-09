@@ -34,3 +34,9 @@
     top: 220px;
     margin-left: -200px;
 }
+
+.dialogo{
+    padding: 3px;
+    border: 1px solid black;
+    border-radius: 20px;
+}

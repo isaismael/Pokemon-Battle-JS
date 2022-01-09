@@ -1,62 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css">
     <title>Pokemon Battle!</title>
 </head>
+
 <body>
     <header class="titulo">Pokemon Battle JS</header>
-    
+
     <!-- Scenery -->
-    <div class="scenery text-center" >
+    <div class="scenery text-center">
         <img class="sceneryBattle img-fluid" src="/assets/bg/background.png" alt="" srcset="">
-    
-    <!-- Rival -->
-    <div class="pkRival" >
-        <img class="rivalImg" src="/assets/pokemones/venusaur.png" alt="" srcset="">
+
+        <!-- Rival -->
+        <div class="pkRival">
+            <img class="rivalImg" src="/assets/pokemones/venusaur.png" alt="" srcset="">
+        </div>
+
+        <!-- Player -->
+        <div class="pkPlayer">
+            <img class="playerImg" src="/assets/pokemones/charizard.png" alt="" srcset="">
+        </div>
     </div>
 
-    <!-- Player -->
-    <div class="pkPlayer" >
-        <img class="playerImg" src="/assets/pokemones/charizard.png" alt="" srcset="">
+    <!-- Dialogo -->
+    <div>
+        <div class="dialogo text-center m-2">
+            <h2>Un Vensasaur salvaje ha aparecido y quiere pelear!</h2>
+        </div>
     </div>
-    </div>
+    
 
     <!-- Status -->
     <div class="container text-center mt-2">
         <div class="row align-items-start">
             <!-- Player -->
-          <div class="col">
-            <h3>Charizard</h3>
-            <h3>HP:</h3>
-            <h4 id="hpPlayer">100</h4>
-            <h4 id="estadoPlayer">Ataque: </h4>
-          </div>
-          <!-- Rival -->
-          <div class="col">
-            <h3>Venasaur</h3>
-            <h3>HP:</h3>
-            <h4 id="hpRival">100</h4>
-            <h4 id="estadoRival">Ataque:</h4>
-          </div>
+            <div class="col">
+
+                <h3>Charizard</h3>
+                <div class="progress">
+                    <div id="hpBarra" class="barra progress-bar" role="progressbar" style="width: 100%"
+                        aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    </div>
+                </div>
+                <h4 id="hpPlayer">HP: 100</h4>
+            </div>
+            <!-- Rival -->
+            <div class="col">
+                <h3>Venasaur</h3>
+                <div class="progress">
+                    <div id="barraRival" class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <h4 id="hpRival">HP: 100</h4>
+            </div>
         </div>
 
-    <!-- BTN -->
-    <div class="botonesAtaques m-2 text-center">
-        <button id="btnFuria" class="btn-danger m-1">Furia</button>
-        <button id="btnLanzallamas" class="btn-danger m-1">Lanzallamas</button>
-        <button id="btnAscuas" class="btn-danger m-1">Ascuas</button>
-        <button id="btnArañazo" class="btn-danger m-1">Arañazo</button>
-    </div>
+        <!-- BTN -->
+        <div class="botonesAtaques m-2 text-center">
+            <button id="btnFuria" class="btn-danger m-1 p-1">Furia</button>
+            <button id="btnLanzallamas" class="btn-danger m-1 p-1">Lanzallamas</button>
+            <button id="btnAscuas" class="btn-danger m-1 p-1">Ascuas</button>
+            <button id="btnArañazo" class="btn-danger m-1 p-1">Arañazo</button>
+        </div>
 
-    <audio autoplay >
+        <!-- <audio autoplay >
         <source src="/assets/audio/battle.ogg"> 
-    </audio>
+    </audio> -->
 
-    <script src="/js/juego.js"></script>
+        <script src="/js/juego.js"></script>
 </body>
+
 </html>

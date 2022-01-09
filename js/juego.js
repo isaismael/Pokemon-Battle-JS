@@ -22,11 +22,13 @@ const btnAscuas = document.querySelector('#btnAscuas');
 const btnArañazo = document.querySelector('#btnArañazo');
 
 const hpPlayer = document.querySelector('#hpPlayer');
-const estadoPlayer = document.querySelector('#estadoPlayer');
 
 const hpRival = document.querySelector('#hpRival');
-const estadoRival = document.querySelector('#estadoRival');
 
+const hpBarra = document.querySelector('#hpBarra');
+const barraRival = document.querySelector('#barraRival');
+
+const dialogo = document.querySelector(".dialogo");
 
 
 // Ataques Player
@@ -53,20 +55,24 @@ const ataqueRival = () => {
 
     if (rival === cabezaso){
         vidaCharizard = vidaCharizard - 6;
-        hpPlayer.innerHTML = vidaCharizard;
-        estadoRival.innerHTML = 'Ataque: Cabezaso';
+        hpPlayer.innerHTML = `HP: ${vidaCharizard}`;
+        hpBarra.style.width = `${vidaCharizard}%`;
+        dialogo.innerHTML = "<h2>Venasaur utilizó Cabezaso</h2>";
     } else if (rival === hojasNavajas){
         vidaCharizard = vidaCharizard - 12;
-        hpPlayer.innerHTML = vidaCharizard;
-        estadoRival.innerHTML = 'Ataque: Hojas Navajas';
+        hpPlayer.innerHTML = `HP: ${vidaCharizard}`;
+        hpBarra.style.width = `${vidaCharizard}%`;
+        dialogo.innerHTML = "<h2>Venasaur utilizó Hojas Navajas</h2>";
     } else if (rival === latigoCepa) {
         vidaCharizard = vidaCharizard - 14;
-        hpPlayer.innerHTML = vidaCharizard;
-        estadoRival.innerHTML = 'Ataque: Latigo Cepa';
+        hpPlayer.innerHTML = `HP: ${vidaCharizard}`;
+        hpBarra.style.width = `${vidaCharizard}%`;
+        dialogo.innerHTML = "<h2>Venasaur utilizó Latigo Cepa</h2>";
     } else if (rival === fallar) {
         vidaCharizard = vidaCharizard - 0;
-        hpPlayer.innerHTML = vidaCharizard;
-        estadoRival.innerHTML = 'Ataque: Fallo!';
+        hpPlayer.innerHTML = `HP: ${vidaCharizard}`;
+        hpBarra.style.width = `${vidaCharizard}%`;
+        dialogo.innerHTML = "<h2>Ataque de Venasaur salvaje Falló!</h2>";
     } 
 }
 
@@ -74,8 +80,9 @@ const ataqueRival = () => {
 //BTN Ataques
 btnFuria.addEventListener( 'click', () => {
     ataqueFuria();
-    estadoPlayer.innerHTML = 'Ataque: Furia';
-    hpRival.innerHTML = vidaVenasaur;
+    barraRival.style.width = `${vidaVenasaur}%`;
+    hpRival.innerHTML = `HP: ${vidaVenasaur}`;
+    dialogo.innerHTML = "<h2>Charizard utilizó Ataque Furia</h2>";
     btnFuria.disabled = true;
     btnLanzallamas.disabled = true;
     btnAscuas.disabled = true;
@@ -95,8 +102,9 @@ btnFuria.addEventListener( 'click', () => {
 
 btnLanzallamas.addEventListener( 'click', ()=> {
     ataqueLanzallamas();
-    estadoPlayer.innerHTML = 'Ataque: Lanzallamas';
-    hpRival.innerHTML = vidaVenasaur;
+    barraRival.style.width = `${vidaVenasaur}%`;
+    hpRival.innerHTML = `HP: ${vidaVenasaur}`;
+    dialogo.innerHTML = "<h2>Charizard utilizó Lanzallamas</h2>";
     btnFuria.disabled = true;
     btnLanzallamas.disabled = true;
     btnAscuas.disabled = true;
@@ -115,8 +123,9 @@ btnLanzallamas.addEventListener( 'click', ()=> {
 
 btnAscuas.addEventListener('click', () => {
     ataqueAscuas();
-    estadoPlayer.innerHTML = 'Ataque: Ascuas';
-    hpRival.innerHTML = vidaVenasaur;
+    barraRival.style.width = `${vidaVenasaur}%`;
+    hpRival.innerHTML = `HP: ${vidaVenasaur}`;
+    dialogo.innerHTML = "<h2>Charizard utilizó Ascuas</h2>";
     btnFuria.disabled = true;
     btnLanzallamas.disabled = true;
     btnAscuas.disabled = true;
@@ -135,8 +144,9 @@ btnAscuas.addEventListener('click', () => {
 
 btnArañazo.addEventListener('click', () => {
     ataqueArañazo();
-    estadoPlayer.innerHTML = 'Ataque: Arañazo';
-    hpRival.innerHTML = vidaVenasaur;
+    barraRival.style.width = `${vidaVenasaur}%`;
+    hpRival.innerHTML = `HP: ${vidaVenasaur}`;
+    dialogo.innerHTML = "<h2>Charizard utilizó Arañazo</h2>";
     btnFuria.disabled = true;
     btnLanzallamas.disabled = true;
     btnAscuas.disabled = true;
