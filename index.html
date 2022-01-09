@@ -10,14 +10,48 @@
 </head>
 <body>
     <header class="titulo">Pokemon Battle JS</header>
-
-
-<!-- BTN -->
-    <div class="botonesAtaques m-2 text-center">
-        <button id="btnAtaque" class="btn-danger m-1" >Lanzallamas</button>
-        <button id="btnAtaque" class="btn-danger m-1" >Furia</button>
-        <button id="btnAtaque" class="btn-danger m-1" >Ascuas</button>
-        <button id="btnAtaque" class="btn-danger m-1" >Arañazo</button>
+    <!-- Scenery -->
+    <div class="scenery text-center" >
+        <img class="sceneryBattle img-fluid" src="/assets/bg/background.png" alt="" srcset="">
+    
+    <!-- Rival -->
+    <div class="pkRival" >
+        <img class="rivalImg" src="/assets/pokemones/venusaur.png" alt="" srcset="">
     </div>
+
+    <!-- Player -->
+    <div class="pkPlayer" >
+        <img class="playerImg" src="/assets/pokemones/charizard.png" alt="" srcset="">
+    </div>
+    </div>
+
+    <!-- Status -->
+    <div class="container text-center mt-2">
+        <div class="row align-items-start">
+            <!-- Player -->
+          <div class="col">
+            <h3>Charizard</h3>
+            <h3>HP:</h3>
+            <h4 id="hpPlayer">100</h4>
+            <h4 id="estadoPlayer" >Estado: </h4>
+          </div>
+          <!-- Rival -->
+          <div class="col">
+            <h3>Venasaur</h3>
+            <h3>HP:</h3>
+            <h4 id="hpRival">100</h4>
+            <h4 id="estadoRival" >Estado: </h4>
+          </div>
+        </div>
+
+    <!-- BTN -->
+    <div class="botonesAtaques m-2 text-center">
+        <button id="btnFuria" class="btn-danger m-1">Furia</button>
+        <button id="btnLanzallamas" class="btn-danger m-1">Lanzallamas</button>
+        <button id="btnAscuas" class="btn-danger m-1">Ascuas</button>
+        <button id="btnArañazo" class="btn-danger m-1">Arañazo</button>
+    </div>
+
+    <script src="/js/juego.js"></script>
 </body>
 </html>
