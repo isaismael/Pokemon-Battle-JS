@@ -35,6 +35,33 @@ const barraRival = document.querySelector('#barraRival');
 
 const dialogo = document.querySelector(".dialogo");
 
+const imgRival = document.querySelector('.rivalImg')
+const playerImg =document.querySelector('.playerImg');
+
+// Mover IMG Ataques
+const movAtaque = () =>{
+    imgRival.style.transform = 'translateX(-10px)';
+    setTimeout(() => {
+        imgRival.style.transform = 'translateX(10px)';
+    }, 100);
+    playerImg.style.filter = "brightness(2)";
+    setTimeout(() => {
+        playerImg.style.filter = "brightness(0)";
+        playerImg.style.filter = "drop-shadow(-10px 0px 10px black)"; 
+    }, 100);
+}
+// Mov Player
+const movPlayer = () =>{
+    playerImg.style.transform = 'translateX(10px)';
+    setTimeout(() => {
+        playerImg.style.transform = 'translateX(-10px)';
+    }, 100);
+    imgRival.style.filter = "brightness(2)";
+    setTimeout(() => {
+        imgRival.style.filter = "brightness(0)";
+        imgRival.style.filter = "drop-shadow(-10px 10px 10px black)"; 
+    }, 100);
+}
 
 
 //Hab/Des BTN
@@ -79,6 +106,7 @@ const ataqueRival = () => {
         hpPlayer.innerHTML = `HP: ${vidaCharizard}`;
         hpBarra.style.width = `${vidaCharizard}%`;
         dialogo.innerHTML = "<h3>Venasaur utilizó Cabezaso</h3>";
+        movAtaque();
         if ( vidaCharizard <= derrota ){
             dialogo.innerHTML = "<h3>Has sido derrotado!</h3>";
             hpPlayer.innerHTML = `HP: 0`;
@@ -89,6 +117,7 @@ const ataqueRival = () => {
         hpPlayer.innerHTML = `HP: ${vidaCharizard}`;
         hpBarra.style.width = `${vidaCharizard}%`;
         dialogo.innerHTML = "<h3>Venasaur utilizó Hojas Navajas</h3>";
+        movAtaque();
         if ( vidaCharizard <= derrota ){
             dialogo.innerHTML = "<h3>Has sido derrotado!</h3>";
             hpPlayer.innerHTML = `HP: 0`;
@@ -99,6 +128,7 @@ const ataqueRival = () => {
         hpPlayer.innerHTML = `HP: ${vidaCharizard}`;
         hpBarra.style.width = `${vidaCharizard}%`;
         dialogo.innerHTML = "<h3>Venasaur utilizó Latigo Cepa</h3>";
+        movAtaque();
         if ( vidaCharizard <= derrota ){
             dialogo.innerHTML = "<h3>Has sido derrotado!</h3>";
             hpPlayer.innerHTML = `HP: 0`;
@@ -109,6 +139,7 @@ const ataqueRival = () => {
         hpPlayer.innerHTML = `HP: ${vidaCharizard}`;
         hpBarra.style.width = `${vidaCharizard}%`;
         dialogo.innerHTML = "<h3>Ataque de Venasaur salvaje Falló!</h3>";
+        movAtaque();
     } else if(rival === comerBaya ){
         vidaVenasaur = vidaVenasaur + BayaZidra
         hpRival.innerHTML = `HP: ${vidaVenasaur}`;
@@ -122,9 +153,11 @@ const ataqueRival = () => {
     
 }
 
+
 //BTN Ataques
 btnFuria.addEventListener( 'click', () => {
     ataqueFuria();
+    movPlayer();
     barraRival.style.width = `${vidaVenasaur}%`;
     hpRival.innerHTML = `HP: ${vidaVenasaur}`;
     dialogo.innerHTML = "<h3>Charizard utilizó Ataque Furia</h3>";
@@ -148,6 +181,7 @@ btnFuria.addEventListener( 'click', () => {
 
 btnLanzallamas.addEventListener( 'click', ()=> {
     ataqueLanzallamas();
+    movPlayer();
     barraRival.style.width = `${vidaVenasaur}%`;
     hpRival.innerHTML = `HP: ${vidaVenasaur}`;
     dialogo.innerHTML = "<h3>Charizard utilizó Lanzallamas</h3>";
@@ -170,6 +204,7 @@ btnLanzallamas.addEventListener( 'click', ()=> {
 
 btnAscuas.addEventListener('click', () => {
     ataqueAscuas();
+    movPlayer();
     barraRival.style.width = `${vidaVenasaur}%`;
     hpRival.innerHTML = `HP: ${vidaVenasaur}`;
     dialogo.innerHTML = "<h3>Charizard utilizó Ascuas</h3>";
@@ -192,6 +227,7 @@ btnAscuas.addEventListener('click', () => {
 
 btnArañazo.addEventListener('click', () => {
     ataqueArañazo();
+    movPlayer();
     barraRival.style.width = `${vidaVenasaur}%`;
     hpRival.innerHTML = `HP: ${vidaVenasaur}`;
     dialogo.innerHTML = "<h3>Charizard utilizó Arañazo</h3>";
